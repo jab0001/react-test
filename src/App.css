@@ -1,0 +1,79 @@
+.user__list {
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 50%;
+  border: solid 2px green;
+  border-radius: 5px;
+  padding: 10px;
+
+  list-style: none;
+}
+
+.user__btn {
+    display: block;
+    margin: 0 auto;
+    min-width: 50%;
+
+    color: #fff;
+
+    min-height: 50px;
+    background-color: red;
+    border-radius: 5px;
+    border: solid 2px green;
+
+}
+
+.user__item {
+    border: solid 2px green;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.user_wrapper {
+    margin: 0 auto;
+    max-width: 50%;
+    padding-bottom: 15px;
+    border-bottom: solid 5px purple;
+}
+
+.second__wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.second__input {
+    margin: 0 auto;
+    max-width: 50%;
+}
+
+.second__btn {
+    display: block;
+    margin: 0 auto;
+    min-width: 50%;
+
+    color: #fff;
+
+    min-height: 25px;
+    background-color: red;
+    border-radius: 5px;
+    border: solid 2px green;
+}
+
+.second__btn:disabled {
+    background: black;
+}
+
+.second__title {
+    margin: 0 auto;
+    margin-bottom: 10px;
+
+    text-align: center;
+}
+
+.second__input {
+    display: block;
+    margin: 0 auto;
+
+    margin-bottom: 10px;
+}
