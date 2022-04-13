@@ -1,13 +1,17 @@
-import { FunctionComponent } from 'react';
-import UserList from './components/firstHomework/UserList';
-import SecondTest from './components/secondHomework/SecondTest';
+import { FunctionComponent, useEffect, useState } from 'react';
+import Loader from './components/Loader';
 
 
 const App: FunctionComponent = () => {
+  const [loader, setLoader] = useState<boolean>(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(prev => !prev)
+    },2000)
+  },[])
   return (
     <>
-      <UserList />
-      <SecondTest />
+      <Loader isLoading={loader} />
     </>
   )
 }
