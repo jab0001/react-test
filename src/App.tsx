@@ -1,13 +1,11 @@
 import { FunctionComponent } from 'react';
-import UserList from './components/firstHomework/UserList';
-import SecondTest from './components/secondHomework/SecondTest';
+import Loader from './components/Loader';
 
 
 const App: FunctionComponent = () => {
   return (
     <>
-      <UserList />
-      <SecondTest />
+      <Loader isLoading = {false}/>
     </>
   )
 }

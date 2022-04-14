@@ -1,26 +1,22 @@
 .user__list {
-  margin: 0 auto;
-  margin-top: 20px;
-  max-width: 50%;
-  border: solid 2px green;
-  border-radius: 5px;
-  padding: 10px;
-
-  list-style: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    max-width: 50%;
+    border: solid 2px green;
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
 }
 
 .user__btn {
     display: block;
     margin: 0 auto;
     min-width: 50%;
-
     color: #fff;
-
     min-height: 50px;
     background-color: red;
     border-radius: 5px;
     border: solid 2px green;
-
 }
 
 .user__item {
@@ -51,9 +47,7 @@
     display: block;
     margin: 0 auto;
     min-width: 50%;
-
     color: #fff;
-
     min-height: 25px;
     background-color: red;
     border-radius: 5px;
@@ -67,13 +61,127 @@
 .second__title {
     margin: 0 auto;
     margin-bottom: 10px;
-
     text-align: center;
 }
 
 .second__input {
     display: block;
     margin: 0 auto;
-
     margin-bottom: 10px;
+}
+
+.wrapper {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(1, 0, 1, 0);
+    height: auto;
+    max-height: 9999px;
+}
+
+.accordion-item.collapsed {
+    max-height: 0;
+    transition: max-height 0.85s cubic-bezier(0, 1, 0, 1);
+}
+
+.accordion-title {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #666;
+    padding: 10px 15px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-title:hover,
+.accordion-title.open {
+    color: black;
+}
+
+.accordion-content {
+    padding: 10px 15px;
+}
+
+.tab__list {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid green;
+    border-radius: 10px;
+    padding: 15px;
+    list-style: none;
+}
+
+.tab__item {
+    border: 1px solid purple;
+    border-radius: 10px;
+    padding: 15px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.tab__item--inactive {
+    background: green;
+}
+
+.tab__item--active {
+    background: red;
+}
+
+.tab__render {
+    text-align: center;
+    font-size: 28px;
+}
+
+
+/* Slider */
+
+.slider {
+    width: 100%;
+    align-items: center;
+    position: relative;
+    background: grey;
+}
+
+.slider__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+.slider__title {
+    font-size: 45px;
+    text-align: center;
+}
+
+.slider__arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    padding: 16px;
+    color: white;
+    font-size: 45px;
+    background: inherit;
+    border: none;
+}
+
+.slider__arrow--next {
+    position: absolute;
+    right: 0;
+}
+
+.slider__arrow:hover {
+    background-color: #000;
+    color: white;
+}
+
+.homework_wrapper {
+    width: 50%;
+    margin: 0 auto;
 }
