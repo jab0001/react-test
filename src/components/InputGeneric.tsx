@@ -58,7 +58,7 @@ export function InputGenericEditVersion<T extends BaseSelectDataItem>( {
   return (
     <>
       <div className={'homework_wrapper'}>
-        <h2>Задание : Generic</h2>
+        <h2>Задание: Generic</h2>
         <select
           onChange={( e ) => setSelectItem(
             selectData.find( item => item.id === e.target.value ) || selectData[ defaultSelectDataItem ]
