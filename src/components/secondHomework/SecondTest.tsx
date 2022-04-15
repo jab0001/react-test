@@ -10,7 +10,7 @@ const SecondTest: FunctionComponent = () => {
   const [list, setList] = useState<Array<string>>(['Bill', 'Scot', 'Garry', 'Scot'])
   return (
     <>
-      <div className={"user_wrapper"}>
+      <div className={"homework_wrapper"} style={{display: "none"}}>
         <h2>Задание: 2</h2>
         <TitleTest data={list.length}/>
         <InputTest value={value} setValue={setValue}/>

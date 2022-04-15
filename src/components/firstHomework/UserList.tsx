@@ -60,7 +60,7 @@ const UserList: FunctionComponent<Props> = ({ initialVisible = true }) => {
 
     return (
         <>
-            <div className={"user_wrapper"}>
+            <div className={"homework_wrapper"} style={{display: "none"}}>
                 <h2>Задание : 1</h2>
                 <button className={"user__btn"} onClick={buttonHandler}>{visible ? "Скрыть" : "Показать"}</button>
                 <input value={filter} onChange={({ target: { value } }) => {
