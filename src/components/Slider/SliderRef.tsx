@@ -1,10 +1,16 @@
-import { useRef, useState } from "react";
+import { FunctionComponent, useRef, useState } from "react";
+
+interface Props {
+    sliderData: Array<{
+        title: string
+    }>
+}
 
 
-const SliderRef = ({ sliderData }: any) => {
-    const [currentSlide, setCurrent] = useState(0);
-    const sliderPrev = useRef(null)
-    const sliderNext = useRef(null)
+const SliderRef: FunctionComponent<Props> = ({ sliderData }) => {
+    const [currentSlide, setCurrent] = useState<number>(0);
+    const sliderPrev = useRef<HTMLButtonElement>(null)
+    const sliderNext = useRef<HTMLButtonElement>(null)
 
     const Slide = (element:any) => {
         if (element.current.className.includes("slider__arrow--next")) {

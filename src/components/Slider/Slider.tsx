@@ -1,11 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { FunctionComponent, useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../Context/Context";
 import Slide from "./Slide";
 import SliderArrow from "./SliderArrow";
 
+interface Props {
+    sliderData: Array<{
+        title: string
+    }>
+}
 
-const Slider = ({ sliderData }: any) => {
-    const [current, setCurrent] = useState(0);
+
+const Slider: FunctionComponent<Props> = ({ sliderData }: any) => {
+    const [current, setCurrent] = useState<number>(0);
     const [slide, getSlide] = useState(sliderData[current])
     const theme = useContext( ThemeContext )
     
