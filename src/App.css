@@ -146,9 +146,19 @@
     align-items: center;
     position: relative;
     background: grey;
+    overflow: hidden;
+}
+
+.slider__body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    transition: all .3s;
 }
 
 .slider__item {
+    flex: 1 0 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
