@@ -6,6 +6,8 @@ import AccordionList from './components/AccordionList/AccordionList'
 import TabList from './components/Tabs/TabList'
 import InputGeneric, { InputGenericEditVersion } from './components/InputGeneric'
 import { ThemeProvider } from './components/hooksLesson/context'
+import { Provider } from 'react-redux'
+import { store } from './redux'
 
 const texts = {
   default: '',
@@ -42,64 +44,66 @@ class ErrorBoundary extends Component<any, any> {
 }
 
 const App: FunctionComponent = () => {
-  const [loader, setLoader] = useState<boolean>( true )
+  const [loader, setLoader] = useState<boolean>( false )
   const [theme, setTheme] = useState<'light' | 'dark'>( 'light' )
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoader(prev => !prev)
-    }, 3000)
-  }, [loader])
+  // useEffect( () => {
+  //   setTimeout( () => {
+  //     setLoader( prev => !prev )
+  //   }, 3000 )
+  // }, [loader] )
   return (
-    <ThemeProvider theme={theme}>
-      <Loader isLoading={loader}>
-        <UserList/>
-        <SecondTest/>
-        <AccordionList/>
-        <TabList/>
-        <ErrorBoundary>
-          <InputGeneric
-            texts={texts}
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Loader isLoading={false}>
+          <UserList/>
+          <SecondTest/>
+          <AccordionList/>
+          <TabList/>
+          <ErrorBoundary>
+            <InputGeneric
+              texts={texts}
+            />
+          </ErrorBoundary>
+          <InputGenericEditVersion
+            selectData={[
+              {
+                title: '123',
+                id: '1',
+                subTitle: '1',
+                optionKey: 'Привет, Андрей',
+                data: { value: 22, address: { street: 'Улица 1' } }
+              },
+              {
+                title: '123',
+                id: '2',
+                subTitle: '1',
+                optionKey: 'Привет, Роман',
+                data: { value: 22, address: { street: 'Улица 2' } }
+              },
+              {
+                title: '123',
+                id: '3',
+                subTitle: '1',
+                optionKey: 'Привет, Евгений',
+                data: { value: 22, address: { street: 'Улица 3' } }
+              },
+              {
+                title: '123',
+                id: '4',
+                subTitle: '1',
+                optionKey: 'Привет, Дмитрий',
+                data: { value: 22, address: { street: 'Улица 4' } }
+              }
+            ]}
+            inSelectItemRenderKey={'optionKey'}
+            renderOption={( data ) => {
+              return data.data.address.street
+            }}
           />
-        </ErrorBoundary>
-        <InputGenericEditVersion
-          selectData={[
-            {
-              title: '123',
-              id: '1',
-              subTitle: '1',
-              optionKey: 'Привет, Андрей',
-              data: { value: 22, address: { street: 'Улица 1' } }
-            },
-            {
-              title: '123',
-              id: '2',
-              subTitle: '1',
-              optionKey: 'Привет, Роман',
-              data: { value: 22, address: { street: 'Улица 2' } }
-            },
-            {
-              title: '123',
-              id: '3',
-              subTitle: '1',
-              optionKey: 'Привет, Евгений',
-              data: { value: 22, address: { street: 'Улица 3' } }
-            },
-            {
-              title: '123',
-              id: '4',
-              subTitle: '1',
-              optionKey: 'Привет, Дмитрий',
-              data: { value: 22, address: { street: 'Улица 4' } }
-            }
-          ]}
-          inSelectItemRenderKey={'optionKey'}
-          renderOption={( data ) => {
-            return data.data.address.street
-          }}
-        />
-      </Loader>
-    </ThemeProvider>
+        </Loader>
+      </ThemeProvider>
+    </Provider>
   )
 }
 
